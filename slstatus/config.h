@@ -67,5 +67,5 @@ static const struct arg args[] = {
 	/* function format          argument */
 	{ battery_perc, " %s%%", "BAT0"},
 	{ battery_state, "%s ", "BAT0"},
-	{ datetime, "%s ",           "%a %b %d %I:%M %p" },
+	{ datetime, " %s ", "%a %b %d %I:%M %p" },
 };
