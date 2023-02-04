@@ -83,6 +83,7 @@ static const char *scrottopiccmd[] = {"scrottopict", NULL};
 static const char *scrotcpcmd[] = {"scrotcp", NULL};
 static const char *scrottopicselcmd[] = {"scrottopictsel", NULL};
 static const char *scrotselcpcmd[] = {"scrotselcp", NULL};
+static const char *lockscreen[] = {"slock", NULL};
 
 const char *spcmd1[] = {my_terminal, "--class", "terminal", NULL};
 const char *spcmd2[] = {my_terminal, "--class", "file-manager", "-e", "ranger", NULL};
@@ -131,6 +132,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_period,                      focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,                       tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period,                      tagmon,         {.i = +1 } },
+	{ MODKEY|ShiftMask, 		XK_z,		                spawn,		{.v = lockscreen}},
 	{ MODKEY|ShiftMask, 		XK_f,		                spawn,		{.v = browserfcmd}},
 	{ MODKEY|ShiftMask, 		XK_g,		                spawn,		{.v = browserccmd}},
 	{ MODKEY|ShiftMask,		XK_v,		                spawn, 		{.v = pavucmd}},
