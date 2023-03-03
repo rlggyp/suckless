@@ -130,6 +130,7 @@ static Key keys[] = {
 	{ MODKEY,												XK_Print,	              			  spawn,					SHCMD("scrot -s ~/Pictures/scrot-%Y-%m-%d_%s.png")},
 	{ MODKEY|ShiftMask,							XK_Print,				                spawn,					SHCMD("scrot .scrot.png && xclip -selection c -t image/png -i .scrot.png && rm .scrot.png")},
 	{ MODKEY|ControlMask,						XK_Print,	 				              spawn,					SHCMD("scrot -s .scrot.png && xclip -selection c -t image/png -i .scrot.png && rm .scrot.png")},
+	{ MODKEY|ShiftMask, 						XK_z,														spawn, 					SHCMD("slock")},
 	{ Mod1Mask,     								XK_Return,     	                togglescratch,  {.ui = 0 } },
 	{ MODKEY|ShiftMask, 	   	      XK_e,	  	                			togglescratch,  {.ui = 1 } },
 	{ MODKEY|ShiftMask,  						XK_n,  		                			togglescratch,  {.ui = 2 } },
