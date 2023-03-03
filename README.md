@@ -3,7 +3,7 @@ install dependencies
 ```bash
 sudo pacman -S libxft libxinerama freetype2 libx11 fontconfig base-devel feh
 ```
-
+build and install
 ```bash
 cd dwm
 sudo make install
