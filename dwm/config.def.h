@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const char my_terminal[]       = "kitty";/* terminal what i use */
+static const char my_terminal[]     = "kitty";/* terminal what i use */
 static const unsigned int gappx     = 6;       /* gaps between windows */
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
@@ -15,8 +15,8 @@ static const char *fonts[]          = {"JetBrains Mono:weight=regular:size=10:an
                                       ,"Noto Sans CJK TC:weight=regular:size=10:antialias=true:autohint=true"
                                       ,"JoyPixels:weight=regular:size=10:antialias=true:autohint=true"};
 static const char dmenufont[]       =  "JetBrains Mono:weight=regular:size=10:antialias=true:autohint=true";
-static const char col1[]       = "#1a1b26";
-static const char col2[]       = "#c0caf5";
+static const char col1[]       			= "#1a1b26";
+static const char col2[]       			= "#c0caf5";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col2, col1, col1 },
@@ -31,15 +31,15 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      	instance    		  title       	      tags mask       isfloating   	monitor */
-	{ NULL,         NULL,       		  "Volume Control",   0,              1,           	-1 },
-	{ "xdman-Main", NULL,       		  NULL,               0,              1,           	-1 },
-	{ NULL,		"terminal",		  NULL,	       	      SPTAG(0),	      1,		-1 },
-	{ NULL,		"file-manager",	    	  NULL,	       	      SPTAG(1),	      1,		-1 },
-	{ NULL,		"network-manager",	  NULL,	       	      SPTAG(2),	      1,		-1 },
-	{ NULL,		"simplescreenrecorder",	  NULL,	       	      SPTAG(3),	      1,		-1 },
-	{ NULL,		"cmus",	                  NULL,	       	      SPTAG(4),	      1,		-1 },
-	{ NULL,		"calculator",	          NULL,	       	      SPTAG(5),	      1,		-1 },
+	/* class      	instance    		  			title       	      tags mask       isfloating   	monitor */
+	{ NULL,         NULL,										"Volume Control",   0,              1,           	-1 },
+	{ "xdman-Main", NULL,										NULL,               0,              1,           	-1 },
+	{ NULL,					"terminal",							NULL,	       	      SPTAG(0),	      1,						-1 },
+	{ NULL,					"file-manager",					NULL,	       	      SPTAG(1),	      1,						-1 },
+	{ NULL,					"network-manager",			NULL,	       	      SPTAG(2),	      1,						-1 },
+	{ NULL,					"simplescreenrecorder", NULL,	       	      SPTAG(3),	      1,						-1 },
+	{ NULL,					"cmus",									NULL,	       	      SPTAG(4),	      1,						-1 },
+	{ NULL,					"calculator",						NULL,	       	      SPTAG(5),	      1,						-1 },
 };
 
 /* layout(s) */
@@ -69,20 +69,6 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col1, "-nf", col2, "-sb", col2, "-sf", col1, NULL };
-static const char *termcmd[]  = {my_terminal, NULL};
-static const char *browserfcmd[] = {"firefox", NULL};
-static const char *browserccmd[] = {"firefox", "--private-window", NULL};
-static const char *pavucmd[] = {"pavucontrol", NULL};
-static const char *libreofficecmd[] = {"libreoffice", NULL};
-static const char *brightdocmd[] = {"brightnessctl", "set", "2%-", NULL};
-static const char *brightupcmd[] = {"brightnessctl", "set", "2%+", NULL};
-static const char *voldocmd[] = {"amixer", "-D", "pulse", "sset", "Master", "4%-", NULL};
-static const char *volupcmd[] = {"amixer", "-D", "pulse", "sset", "Master", "4%+", NULL};
-static const char *voltogcmd[] = {"amixer", "-D", "pulse", "sset", "Master", "toggle", NULL};
-static const char *scrottopiccmd[] = {"scrottopict", NULL};
-static const char *scrotcpcmd[] = {"scrotcp", NULL};
-static const char *scrottopicselcmd[] = {"scrottopictsel", NULL};
-static const char *scrotselcpcmd[] = {"scrotselcp", NULL};
 
 const char *spcmd1[] = {my_terminal, "--class", "terminal", NULL};
 const char *spcmd2[] = {my_terminal, "--class", "file-manager", "-e", "ranger", NULL};
@@ -98,8 +84,8 @@ typedef struct {
 
 static Sp scratchpads[] = {
 	/* name                 cmd  */
-	{"terminal",      	spcmd1},
-	{"file-manager",      	spcmd2},
+	{"terminal",            spcmd1},
+	{"file-manager",        spcmd2},
 	{"network-manager",     spcmd3},
 	{"simplescreenrecorder",spcmd4},
 	{"cmus",                spcmd5},
@@ -109,7 +95,7 @@ static Sp scratchpads[] = {
 static Key keys[] = {
 	/* modifier                     key                             function        argument */
 	{ MODKEY|ShiftMask,             XK_Return,                      spawn,          {.v = dmenucmd } },
-	{ MODKEY,	                XK_Return,                      spawn,          {.v = termcmd } },
+	{ MODKEY,	                			XK_Return,                      spawn,          SHCMD(my_terminal) },
 	{ MODKEY,                       XK_b,                           togglebar,      {0} },
 	{ MODKEY,                       XK_j,                           focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,                           focusstack,     {.i = -1 } },
@@ -131,25 +117,25 @@ static Key keys[] = {
 	{ MODKEY,                       XK_period,                      focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,                       tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period,                      tagmon,         {.i = +1 } },
-	{ MODKEY|ShiftMask, 		XK_f,		                spawn,		{.v = browserfcmd}},
-	{ MODKEY|ShiftMask, 		XK_g,		                spawn,		{.v = browserccmd}},
-	{ MODKEY|ShiftMask,		XK_v,		                spawn, 		{.v = pavucmd}},
-	{ MODKEY|ShiftMask,		XK_l,		                spawn, 		{.v = libreofficecmd}},
-	{ 0,		                XF86XK_MonBrightnessDown,	spawn, 		{.v = brightdocmd}},
-	{ 0,		                XF86XK_MonBrightnessUp,		spawn, 		{.v = brightupcmd}},
-	{ Mod1Mask,			XK_comma,	                spawn,		{.v = voldocmd}},
-	{ Mod1Mask,			XK_period,	                spawn,		{.v = volupcmd}},
-	{ Mod1Mask,			XK_m,		                spawn,		{.v = voltogcmd}},
-	{ 0,				XK_Print,	                spawn,		{.v = scrottopiccmd}},
-	{ MODKEY,			XK_Print,	                spawn,		{.v = scrottopicselcmd}},
-	{ MODKEY|ShiftMask,		XK_Print,	                spawn,		{.v = scrotcpcmd}},
-	{ MODKEY|ControlMask,		XK_Print,	                spawn,		{.v = scrotselcpcmd}},
-	{ Mod1Mask,     		XK_Return,     	                togglescratch,  {.ui = 0 } },
-	{ MODKEY|ShiftMask, 	        XK_e,	  	                togglescratch,  {.ui = 1 } },
-	{ MODKEY|ShiftMask,  		XK_n,  		                togglescratch,  {.ui = 2 } },
-	{ MODKEY|ShiftMask,  		XK_s,  		                togglescratch,  {.ui = 3 } },
-	{ MODKEY|ShiftMask,  		XK_m,  		                togglescratch,  {.ui = 4 } },
-	{ MODKEY|ShiftMask,  		XK_k,  		                togglescratch,  {.ui = 5 } },
+	{ MODKEY|ShiftMask, 						XK_f,		                				spawn,					SHCMD("firefox")},
+	{ MODKEY|ShiftMask, 						XK_g,		                				spawn,					SHCMD("firefox --private-window")},
+	{ MODKEY|ShiftMask,							XK_v,		                				spawn, 					SHCMD("pavucontrol")},
+	{ MODKEY|ShiftMask,							XK_l,		                				spawn, 					SHCMD("libreoffice")},
+	{ 0,		                				XF86XK_MonBrightnessDown,				spawn, 					SHCMD("brightnessctl set 2%-")},
+	{ 0,		                				XF86XK_MonBrightnessUp,					spawn, 					SHCMD("brightnessctl set 2%-")},
+	{ Mod1Mask,											XK_comma,	                			spawn,					SHCMD("amixer -D pulse sset Master 4%-")},
+	{ Mod1Mask,											XK_period,	                		spawn,					SHCMD("amixer -D pulse sset Master 4%+")},
+	{ Mod1Mask,											XK_m,		   				              spawn,					SHCMD("amixer -D pulse sset Master toggle")},
+	{ 0,														XK_Print,	                			spawn,					SHCMD("scrot ~/Pictures/scrot-%Y-%m-%d_%s.png")},
+	{ MODKEY,												XK_Print,	              			  spawn,					SHCMD("scrot -s ~/Pictures/scrot-%Y-%m-%d_%s.png")},
+	{ MODKEY|ShiftMask,							XK_Print,				                spawn,					SHCMD("scrot .scrot.png && xclip -selection c -t image/png -i .scrot.png && rm .scrot.png")},
+	{ MODKEY|ControlMask,						XK_Print,	 				              spawn,					SHCMD("scrot -s .scrot.png && xclip -selection c -t image/png -i .scrot.png && rm .scrot.png")},
+	{ Mod1Mask,     								XK_Return,     	                togglescratch,  {.ui = 0 } },
+	{ MODKEY|ShiftMask, 	   	      XK_e,	  	                			togglescratch,  {.ui = 1 } },
+	{ MODKEY|ShiftMask,  						XK_n,  		                			togglescratch,  {.ui = 2 } },
+	{ MODKEY|ShiftMask,  						XK_s,  		                			togglescratch,  {.ui = 3 } },
+	{ MODKEY|ShiftMask,  						XK_m,  		                			togglescratch,  {.ui = 4 } },
+	{ MODKEY|ShiftMask,  						XK_k,  		                			togglescratch,  {.ui = 5 } },
 	TAGKEYS(                        XK_1,                           0)
 	TAGKEYS(                        XK_2,                           1)
 	TAGKEYS(                        XK_3,                           2)
@@ -168,7 +154,7 @@ static Button buttons[] = {
 	/* click                event mask      button          function        argument */
 	{ ClkLtSymbol,          0,              Button1,        setlayout,      {0} },
 	{ ClkLtSymbol,          0,              Button3,        setlayout,      {.v = &layouts[2]} },
-	{ ClkStatusText,        0,              Button2,        spawn,          {.v = termcmd } },
+	{ ClkStatusText,        0,              Button2,        spawn,          SHCMD(my_terminal) },
 	{ ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
 	{ ClkClientWin,         MODKEY,         Button2,        togglefloating, {0} },
 	{ ClkClientWin,         MODKEY,         Button3,        resizemouse,    {0} },
