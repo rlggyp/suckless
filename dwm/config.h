@@ -122,7 +122,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,							XK_v,		                				spawn, 					SHCMD("pavucontrol")},
 	{ MODKEY|ShiftMask,							XK_l,		                				spawn, 					SHCMD("libreoffice")},
 	{ 0,		                				XF86XK_MonBrightnessDown,				spawn, 					SHCMD("brightnessctl set 2%-")},
-	{ 0,		                				XF86XK_MonBrightnessUp,					spawn, 					SHCMD("brightnessctl set 2%-")},
+	{ 0,		                				XF86XK_MonBrightnessUp,					spawn, 					SHCMD("brightnessctl set 2%+")},
 	{ Mod1Mask,											XK_comma,	                			spawn,					SHCMD("amixer -D pulse sset Master 4%-")},
 	{ Mod1Mask,											XK_period,	                		spawn,					SHCMD("amixer -D pulse sset Master 4%+")},
 	{ Mod1Mask,											XK_m,		   				              spawn,					SHCMD("amixer -D pulse sset Master toggle")},
