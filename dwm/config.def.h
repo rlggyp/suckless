@@ -8,15 +8,16 @@ static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = {"JetBrains Mono:weight=regular:size=10:antialias=true:autohint=true"
-                                      ,"Symbola:weight=regular:size=10:antialias=true:autohint=true" 
+                                      ,"Noto Color Emoji:weight=regular:size=10:antialias=true:autohint=true" 
                                       ,"Noto Sans CJK JP:weight=regular:size=10:antialias=true:autohint=true"
                                       ,"Noto Sans CJK KR:weight=regular:size=10:antialias=true:autohint=true"
                                       ,"Noto Sans CJK SC:weight=regular:size=10:antialias=true:autohint=true"
                                       ,"Noto Sans CJK TC:weight=regular:size=10:antialias=true:autohint=true"
                                       ,"JoyPixels:weight=regular:size=10:antialias=true:autohint=true"};
+
 static const char dmenufont[]       =  "JetBrains Mono:weight=regular:size=10:antialias=true:autohint=true";
-static const char col1[]       			= "#1a1b26";
-static const char col2[]       			= "#c0caf5";
+static const char col1[]            = "#1a1b26";
+static const char col2[]            = "#c0caf5";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col2, col1, col1 },
