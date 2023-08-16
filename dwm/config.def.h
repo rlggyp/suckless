@@ -1,5 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
+#include <X11/XF86keysym.h>
+
 /* appearance */
 static const char my_terminal[]     = "kitty";/* terminal what i use */
 static const unsigned int gappx     = 6;       /* gaps between windows */
@@ -39,7 +41,7 @@ static const Rule rules[] = {
 	{ NULL,					"file-manager",					NULL,	       	      SPTAG(1),	      1,						-1 },
 	{ NULL,					"network-manager",			NULL,	       	      SPTAG(2),	      1,						-1 },
 	{ NULL,					"simplescreenrecorder", NULL,	       	      SPTAG(3),	      1,						-1 },
-	{ NULL,					"cmus",									NULL,	       	      SPTAG(4),	      1,						-1 },
+	{ "spotify",		NULL,									  "Spotify",	       	SPTAG(4),	      1,						-1 },
 	{ NULL,					"calculator",						NULL,	       	      SPTAG(5),	      1,						-1 },
 };
 
@@ -75,8 +77,9 @@ const char *spcmd1[] = {my_terminal, "--class", "terminal", NULL};
 const char *spcmd2[] = {my_terminal, "--class", "file-manager", "-e", "ranger", NULL};
 const char *spcmd3[] = {my_terminal, "--class", "network-manager", "-e", "nmtui", NULL};
 const char *spcmd4[] = {"simplescreenrecorder", NULL};
-const char *spcmd5[] = {my_terminal, "--class", "cmus", "-e", "cmus", NULL};
+const char *spcmd5[] = {spotify, NULL};
 const char *spcmd6[] = {my_terminal, "--class", "calculator", "-e", "python3", NULL};
+const char *spcmd7[] = {my_terminal, "--class", "calculator", "-e", "python3", NULL};
 
 typedef struct {
 	const char *name;
@@ -89,7 +92,7 @@ static Sp scratchpads[] = {
 	{"file-manager",        spcmd2},
 	{"network-manager",     spcmd3},
 	{"simplescreenrecorder",spcmd4},
-	{"cmus",                spcmd5},
+	{"spotify",             spcmd5},
 	{"calculator",          spcmd6},
 };
 
