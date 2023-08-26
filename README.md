@@ -1,7 +1,7 @@
 ### Installation
 install dependencies
 ```bash
-sudo pacman -S libxft libxinerama freetype2 libx11 fontconfig base-devel feh
+sudo pacman -S libxft libxinerama freetype2 libx11 fontconfig base-devel feh flameshot xclip
 ```
 build and install
 ```bash
