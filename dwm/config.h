@@ -43,6 +43,7 @@ static const Rule rules[] = {
 	{ NULL,					"simplescreenrecorder", NULL,	       	      SPTAG(3),	      1,						-1 },
 	{ "Spotify",		NULL,									  NULL,	       				SPTAG(4),	      1,						-1 },
 	{ NULL,					"calculator",						NULL,	       	      SPTAG(5),	      1,						-1 },
+	{ "discord",		NULL,						        NULL,	       	      SPTAG(6),	      1,						-1 },
 };
 
 /* layout(s) */
@@ -79,6 +80,7 @@ const char *spcmd3[] = {my_terminal, "--class", "network-manager", "-e", "nmtui"
 const char *spcmd4[] = {"simplescreenrecorder", NULL};
 const char *spcmd5[] = {"spotify", NULL};
 const char *spcmd6[] = {my_terminal, "--class", "calculator", "-e", "python3", NULL};
+const char *spcmd7[] = {"discord", NULL};
 
 typedef struct {
 	const char *name;
@@ -93,6 +95,7 @@ static Sp scratchpads[] = {
 	{"simplescreenrecorder",spcmd4},
 	{"spotify",             spcmd5},
 	{"calculator",          spcmd6},
+	{"discord",             spcmd7},
 };
 
 static Key keys[] = {
@@ -141,6 +144,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,  						XK_s,  		                			togglescratch,  {.ui = 3 } },
 	{ MODKEY|ShiftMask,  						XK_m,  		                			togglescratch,  {.ui = 4 } },
 	{ MODKEY|ShiftMask,  						XK_k,  		                			togglescratch,  {.ui = 5 } },
+	{ MODKEY|ShiftMask,  						XK_d,  		                			togglescratch,  {.ui = 6 } },
 	TAGKEYS(                        XK_1,                           0)
 	TAGKEYS(                        XK_2,                           1)
 	TAGKEYS(                        XK_3,                           2)
