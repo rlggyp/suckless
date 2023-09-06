@@ -78,7 +78,7 @@ const char *spcmd1[] = {my_terminal, "--class", "terminal", NULL};
 const char *spcmd2[] = {my_terminal, "--class", "file-manager", "-e", "ranger", NULL};
 const char *spcmd3[] = {my_terminal, "--class", "network-manager", "-e", "nmtui", NULL};
 const char *spcmd4[] = {"simplescreenrecorder", NULL};
-const char *spcmd5[] = {"spotify-launcher", NULL};
+const char *spcmd5[] = {"spotify", NULL};
 const char *spcmd6[] = {my_terminal, "--class", "calculator", "-e", "python3", NULL};
 const char *spcmd7[] = {"discord", NULL};
 
