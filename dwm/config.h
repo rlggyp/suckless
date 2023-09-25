@@ -17,7 +17,7 @@ static const char *fonts[]          = {"JetBrains Mono:weight=regular:size=10:an
                                       ,"Noto Sans CJK TC:weight=regular:size=10:antialias=true:autohint=true"
                                       ,"JoyPixels:weight=regular:size=10:antialias=true:autohint=true"};
 
-static const char dmenufont[]       =  "JetBrains Mono:weight=regular:size=10:antialias=true:autohint=true";
+static const char dmenufont[]       =  "JetBrainsMono Nerd Font:weight=regular:size=10:antialias=true:autohint=true";
 static const char col1[]            = "#1a1b26";
 static const char col2[]            = "#c0caf5";
 static const char *colors[][3]      = {
@@ -40,7 +40,7 @@ static const Rule rules[] = {
 	{ NULL,					"terminal",							NULL,	       	      SPTAG(0),	      1,						-1 },
 	{ NULL,					"file-manager",					NULL,	       	      SPTAG(1),	      1,						-1 },
 	{ NULL,					"network-manager",			NULL,	       	      SPTAG(2),	      1,						-1 },
-	{ NULL,					"simplescreenrecorder", NULL,	       	      SPTAG(3),	      1,						-1 },
+	{ NULL,					"obs", NULL,	       	      SPTAG(3),	      1,						-1 },
 	{ "Spotify",		NULL,									  NULL,	       				SPTAG(4),	      1,						-1 },
 	{ NULL,					"calculator",						NULL,	       	      SPTAG(5),	      1,						-1 },
 	{ "discord",		NULL,						        NULL,	       	      SPTAG(6),	      1,						-1 },
@@ -77,7 +77,7 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 const char *spcmd1[] = {my_terminal, "--class", "terminal", NULL};
 const char *spcmd2[] = {my_terminal, "--class", "file-manager", "-e", "ranger", NULL};
 const char *spcmd3[] = {my_terminal, "--class", "network-manager", "-e", "nmtui", NULL};
-const char *spcmd4[] = {"simplescreenrecorder", NULL};
+const char *spcmd4[] = {"obs", NULL};
 const char *spcmd5[] = {"spotify", NULL};
 const char *spcmd6[] = {my_terminal, "--class", "calculator", "-e", "python3", NULL};
 const char *spcmd7[] = {"discord", NULL};
@@ -92,7 +92,7 @@ static Sp scratchpads[] = {
 	{"terminal",            spcmd1},
 	{"file-manager",        spcmd2},
 	{"network-manager",     spcmd3},
-	{"simplescreenrecorder",spcmd4},
+	{"obs",spcmd4},
 	{"spotify",             spcmd5},
 	{"calculator",          spcmd6},
 	{"discord",             spcmd7},
