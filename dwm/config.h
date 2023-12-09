@@ -9,7 +9,7 @@ static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = {"JetBrains Mono:weight=regular:size=10:antialias=true:autohint=true"
+static const char *fonts[]          = {"JetBrainsMono NF:weight=regular:size=10:antialias=true:autohint=true"
                                       ,"Noto Color Emoji:weight=regular:size=10:antialias=true:autohint=true" 
                                       ,"Noto Sans CJK JP:weight=regular:size=10:antialias=true:autohint=true"
                                       ,"Noto Sans CJK KR:weight=regular:size=10:antialias=true:autohint=true"
@@ -17,7 +17,7 @@ static const char *fonts[]          = {"JetBrains Mono:weight=regular:size=10:an
                                       ,"Noto Sans CJK TC:weight=regular:size=10:antialias=true:autohint=true"
                                       ,"JoyPixels:weight=regular:size=10:antialias=true:autohint=true"};
 
-static const char dmenufont[]       =  "JetBrainsMono Nerd Font:weight=regular:size=10:antialias=true:autohint=true";
+static const char dmenufont[]       = "JetBrainsMono NF:weight=regular:size=10:antialias=true:autohint=true";
 static const char col1[]            = "#1a1b26";
 static const char col2[]            = "#c0caf5";
 static const char *colors[][3]      = {
@@ -38,7 +38,7 @@ static const Rule rules[] = {
 	{ NULL,         NULL,										"Volume Control",   0,              1,           	-1 },
 	{ "xdman-Main", NULL,										NULL,               0,              1,           	-1 },
 	{ NULL,					"terminal",							NULL,	       	      SPTAG(0),	      1,						-1 },
-	{ NULL,					"file-manager",					NULL,	       	      SPTAG(1),	      1,						-1 },
+	{ "Pcmanfm",		NULL,	          				NULL,	       	      SPTAG(1),	      1,						-1 },
 	{ NULL,					"network-manager",			NULL,	       	      SPTAG(2),	      1,						-1 },
 	{ NULL,					"obs", NULL,	       	      SPTAG(3),	      1,						-1 },
 	{ "Spotify",		NULL,									  NULL,	       				SPTAG(4),	      1,						-1 },
@@ -75,10 +75,10 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col1, "-nf", col2, "-sb", col2, "-sf", col1, NULL };
 
 const char *spcmd1[] = {my_terminal, "--class", "terminal", NULL};
-const char *spcmd2[] = {my_terminal, "--class", "file-manager", "-e", "ranger", NULL};
+const char *spcmd2[] = {"pcmanfm" , NULL};
 const char *spcmd3[] = {my_terminal, "--class", "network-manager", "-e", "nmtui", NULL};
 const char *spcmd4[] = {"obs", NULL};
-const char *spcmd5[] = {"spotify", NULL};
+const char *spcmd5[] = {"spotify-launcher", NULL};
 const char *spcmd6[] = {my_terminal, "--class", "calculator", "-e", "python3", NULL};
 const char *spcmd7[] = {"discord", NULL};
 
